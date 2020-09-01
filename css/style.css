@@ -44,6 +44,7 @@ body {
 .cuerpo {
     display: flex;
     justify-content: space-evenly;
+    flex-grow: 1;
 }
 
 .cuerpo div {
@@ -55,4 +56,26 @@ body {
     text-align: center;
     color:white;
     padding: 15px;
+}
+
+@media (max-width: 700px) {
+.cuerpo {
+    flex-direction: column;
+}
+}
+
+.claro body {
+    background-color: white;
+}
+
+.oscuro body {
+    background-color: darkslategray;
+    color: white;
+}
+
+.selector {
+    margin: 10px;
+    text-align: right;
+    cursor: pointer;
+    text-decoration: underline;
 }

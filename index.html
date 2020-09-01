@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html id="tema" class="claro">
     <head>
         <title>Our Site</title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=0, shrink-to-fit=no' name='viewport'/>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
@@ -12,6 +13,9 @@
             <a href=""><div class="elemento">Services</div></a>
             <a href=""><div class="elemento">Contact</div></a>
         </nav>
+        <div class="selector">
+            <a onclick="myFunctionClaro()">Claro</a> | <a onclick="myFunctionOscuro()">Oscuro</a>
+        </div>
         <div class="cuerpo">
             <div>
                 <h2>Column 1</h2>
@@ -30,5 +34,17 @@
         <div class="footer">
             Copyright 2020 All Rights Reserved
         </div>
+        <script type="text/javascript">
+            function myFunctionOscuro() {
+                var element = document.getElementById("tema");
+                element.classList.remove("claro");
+                element.classList.add("oscuro")
+            }
+            function myFunctionClaro() {
+                var element = document.getElementById("tema");
+                element.classList.remove("oscuro");
+                element.classList.add("claro")
+            }
+        </script>
     </body>
 </html>
