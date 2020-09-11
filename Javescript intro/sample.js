@@ -46,3 +46,90 @@ document.getElementById("add-item").addEventListener("click", (event) => {
     
     document.getElementById("list-items").innerHTML += template;
 })
+
+let arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+    console.log(i);
+}
+
+for (let elem of arr) {
+    console.log(elem, arr[elem]);
+}
+
+let arr2 = [1, 2, 3, 4, "bla", {a: 10}]
+
+for (let i = 0; i < arr2.length; i++) {
+    console.log(i, arr2[i], "third arg");
+}
+
+let obj = {
+    a: 10,
+    b: {
+        c: "inside"
+    },
+    c: "bla"
+}
+console.log(obj);
+for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+        console.log(prop, obj[prop]);
+    }
+}
+
+let x = 0;
+let y = 0;
+while (x <= 5) {
+    console.log(x++);
+    console.log(++y);
+}
+
+let sentinel = -1;
+while (sentinel) {
+    console.log(sentinel);
+    sentinel++;
+}
+
+sentinel = 10
+console.log(sentinel == 10);
+console.log(sentinel == "10");
+console.log(sentinel === 10);
+console.log(sentinel === "10");
+
+if (sentinel == "10") {
+    console.log("inside the if ==");
+} else if (sentinel === 10) {
+    console.log("inside the if ===");
+} else {
+    console.log("in the else");
+}
+
+switch ("one") {
+    case "one":
+        console.log("one");
+        break;
+    case "two":
+        console.log("two");
+        break;
+    default:
+        console.log("default");
+}
+
+function Dog() {
+    this.talk = () => {
+        console.log("talk in dog");
+    }
+}
+
+function Duck() {
+    this.talk = () => {
+        console.log("talk in duck");
+    }
+}
+
+function executeTalk(animal) {
+    console.log(animal);
+    animal.talk();
+}
+
+animal = new Duck();
+executeTalk(animal);

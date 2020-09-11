@@ -1,0 +1,36 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-container {
+    padding: 10px; 
+    border: 2px solid white;
+    width: 230px;
+}
+
+.input-bar {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.add-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.add-button button {
+    width: 80px;
+    height: 40px;
+}
+
+.added-item {
+    margin-top: 5px;
+}
+
+.price {
+    font-weight: bold;
+}

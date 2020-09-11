@@ -1,5 +1,5 @@
 function get_element_li (name, price) {
-    return `<li class="added-item">name: ${name} price: <span class="price">${price}</span> <button class="remove-item">remove</button></li>`
+    return `<li class="added-item">${name} - $<span class="price">${price}</span> <button class="remove-item">remove</button></li>`
 }
 
 function update_total () {
@@ -13,7 +13,7 @@ function update_total () {
         let price_value = Number(price.innerHTML);
         total += price_value;
     }
-    document.getElementById("total").innerHTML = total;
+    document.getElementById("total").getElementsByClassName("total-value")[0].innerHTML = total;
 }
 
 function check_valid_input(input) {
