@@ -1,0 +1,21 @@
+<DOCTYPE! html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <title>Pokemon lab</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <h1>Pokemon weight calculator</h1>
+        <div id="container" class="input-container">
+            <div class="input-bar">Pokemon: <input type="text" id="item-name"></div>
+            <div class="add-button"><button id="add-item">Add Pokemon</button></div>
+        </div>
+        <ul id="item-list" class="items"></ul>
+        <hr style="width: 300px; margin: 0px">
+        <div id="total" style="margin-left: 10px; font-size: large; font-weight: bold;">Total weight: <span class="total-value">0.00</span></div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./utils.js"></script>
+    </body>
+</html>
