@@ -1,6 +1,8 @@
 
 function get_element_li (name, weight) {
-    return `<li class="added-item">${name} - <span class="weight">${weight}</span> <button class="remove-item">remove</button></li>`
+    return `<li class="added-item">
+        <img class="icon">${name} -<span class="weight" style="margin-left:5px;">${weight}</span><button class="remove-item">remove</button>
+    </li>`
 }
 
 function update_total () {
@@ -17,7 +19,7 @@ function update_total () {
     document.getElementById("total").getElementsByClassName("total-value")[0].innerHTML = total;
 }
 
-let add_item_to_list = (name, weight) => {
+let add_item_to_list = (name, weight, image_url) => {
     console.log("Adding item...");
     // add item to the list
     let li_template = get_element_li(name, weight);
@@ -26,6 +28,10 @@ let add_item_to_list = (name, weight) => {
     let item_element = document.createElement("li");
     item_element.innerHTML = li_template;
     item_list.appendChild(item_element);
+
+    // add image
+    let img = item_element.getElementsByClassName('icon')[0];
+    img.src = image_url;
 
     // add event listener to the button inside the element just added with the remove_item function
     let btn = item_element.getElementsByClassName("remove-item")[0];
@@ -47,7 +53,9 @@ let remove_item = () => {
 // API calls
 let thenable_handle_for_the_result_of_the_pokemon_request = (result) => {
     //handle here the pokemon from the request
-    add_item_to_list(result.data.species.name, result.data.weight);
+    add_item_to_list(result.data.species.name,
+                    result.data.weight,
+                    result.data.sprites.front_default);
 }
 
 let catchable_handle_for_the_error_of_the_pokemon_request = (err, name) => {
